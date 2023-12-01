@@ -1,0 +1,17 @@
+type Prop = {
+  title: string;
+  children: string;
+  color: string;
+};
+
+const Title = ({ title, children, color }: Prop) => {
+  const titleColor = { color };
+  return (
+    <>
+      <h2 style={titleColor}>{title}</h2>
+      {children}
+    </>
+  );
+};
+
+export default Title;
