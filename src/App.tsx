@@ -12,7 +12,7 @@ function App() {
       margin='2px'
     >
       <Title title='React Tutorial' color='red'>
-        sub title: react basic
+        sub title: Counter (using UseState)
       </Title>
       <Counter />
     </Box>

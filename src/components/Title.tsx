@@ -9,7 +9,7 @@ const Title = ({ title, children, color }: Prop) => {
   return (
     <>
       <h2 style={titleColor}>{title}</h2>
-      {children}
+      <strong>{children}</strong>
     </>
   );
 };
