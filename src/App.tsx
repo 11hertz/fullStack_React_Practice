@@ -1,5 +1,6 @@
 import Title from './components/Title';
 import Box from './components/Box';
+import Counter from './components/Counter';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Title title='React Tutorial' color='red'>
         sub title: react basic
       </Title>
+      <Counter />
     </Box>
   );
 }
