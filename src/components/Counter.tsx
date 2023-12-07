@@ -1,21 +1,12 @@
-import { useState } from 'react';
+type CounterProp = {
+  increaseOrDecreaseCount: (txt: 'upCount' | 'downCount') => void;
+};
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const increaseCount = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const decreaseCount = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
-
+const Counter = ({ increaseOrDecreaseCount }: CounterProp) => {
   return (
     <>
-      <h1>Counter: {count}</h1>
-      <button onClick={increaseCount}>+1</button>
-      <button onClick={decreaseCount}>-1</button>
+      <button onClick={() => increaseOrDecreaseCount('upCount')}>+1</button>
+      <button onClick={() => increaseOrDecreaseCount('downCount')}>-1</button>
     </>
   );
 };
