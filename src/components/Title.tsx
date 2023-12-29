@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 type Prop = {
   title: string;
   children: string;
@@ -6,6 +8,7 @@ type Prop = {
 
 const Title = ({ title, children, color }: Prop) => {
   const titleColor = { color };
+  console.log('title');
   return (
     <>
       <h2 style={titleColor}>{title}</h2>
@@ -14,4 +17,4 @@ const Title = ({ title, children, color }: Prop) => {
   );
 };
 
-export default Title;
+export default memo(Title);
