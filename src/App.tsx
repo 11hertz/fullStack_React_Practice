@@ -15,6 +15,12 @@ function App() {
     }
   };
 
+  const [subTitle, setSubtitle] = useState('');
+
+  const changeSubTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSubtitle(e.currentTarget.value);
+  };
+
   return (
     <Box
       borderWidth='2px'
@@ -24,10 +30,11 @@ function App() {
       margin='2px'
     >
       <Title title='React Tutorial' color='red'>
-        sub title: Counter (using UseState)
+        sub title: {subTitle}
       </Title>
       <h1>Count: {count}</h1>
-      <Counter increaseOrDecreaseCount={increaseOrDecreaseCount} />
+      <Counter increaseOrDecreaseCount={increaseOrDecreaseCount} /> <br />
+      <input type='text' value={subTitle} onChange={changeSubTitle} />
     </Box>
   );
 }

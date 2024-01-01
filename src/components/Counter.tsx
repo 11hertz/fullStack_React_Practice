@@ -3,7 +3,6 @@ type CounterProp = {
 };
 
 const Counter = ({ increaseOrDecreaseCount }: CounterProp) => {
-  console.log('counter');
   return (
     <>
       <button onClick={() => increaseOrDecreaseCount('upCount')}>+1</button>
