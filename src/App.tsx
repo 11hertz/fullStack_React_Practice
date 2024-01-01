@@ -1,7 +1,7 @@
 import Title from './components/Title';
 import Box from './components/Box';
 import Counter from './components/Counter';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,9 +16,11 @@ function App() {
   };
 
   const [subTitle, setSubtitle] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const changeSubTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSubtitle(e.currentTarget.value);
+  const changeSubTitle = () => {
+    const inputTxt = inputRef.current?.value;
+    if (inputTxt) setSubtitle(inputTxt);
   };
 
   return (
@@ -33,8 +35,10 @@ function App() {
         sub title: {subTitle}
       </Title>
       <h1>Count: {count}</h1>
-      <Counter increaseOrDecreaseCount={increaseOrDecreaseCount} /> <br />
-      <input type='text' value={subTitle} onChange={changeSubTitle} />
+      <Counter increaseOrDecreaseCount={increaseOrDecreaseCount} />
+      <br />
+      <input type='text' ref={inputRef} />
+      <button onClick={changeSubTitle}>입력</button>
     </Box>
   );
 }
